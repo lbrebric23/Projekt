@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fashion & Beauty – analiza</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.5; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { margin-bottom: 8px; }
+    .muted { color: #555; margin-top: 0; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 20px 0; }
+    img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #eee; }
+    code { background: #f6f6f6; padding: 2px 6px; border-radius: 6px; }
+    ul { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fashion & Beauty – analiza i vizualizacija</h1>
+    <p class="muted">
+      Grafovi su generirani skriptom <code>scripts/analysis_visualization.py</code> i spremljeni u <code>static/</code>.
+    </p>
+
+    <div class="card">
+      <h2>1) Odnos prosječne cijene i prosječne ocjene po kategoriji</h2>
+      <p>
+        Svaka točka predstavlja jednu kategoriju proizvoda. X-os je prosječna cijena, Y-os prosječna korisnička ocjena.
+      </p>
+      <img src="/static/scatter_category_price_rating.png" alt="Scatter: cijena vs ocjena po kategoriji">
+    </div>
+
+    <div class="card">
+      <h2>2) Najbolje ocijenjeni proizvodi (DummyJSON)</h2>
+      <p>
+        Prikaz top proizvoda po ocjeni (iz DummyJSON izvora). Korisno za usporedbu kvalitete među proizvodima.
+      </p>
+      <img src="/static/top_products_by_rating.png" alt="Top products by rating">
+    </div>
+
+    <div class="card">
+      <h2>Izvori podataka</h2>
+      <ul>
+        <li>Kaggle Fashion Product Images dataset (CSV)</li>
+        <li>DummyJSON Products API (JSON)</li>
+      </ul>
+      <p class="muted">
+        Napomena: integracija je rađena po kategorijama i spremljena u SQLite bazu.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+
